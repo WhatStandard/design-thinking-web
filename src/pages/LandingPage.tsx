@@ -23,6 +23,23 @@ const Title = styled.p`
   }
 `;
 
+const ImageBox = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  animation: move-left 8s linear infinite;
+
+  position: relative;
+  top: 7vh;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+`;
+
 export default function LandingPage() {
   return <>
     <FullScreenBox style={{
@@ -40,6 +57,7 @@ export default function LandingPage() {
       <div style={{height: '3rem'}} />
       
     </FullScreenBox>
+
     <FullScreenBox style={{
       display: 'flex',
       flexDirection: 'column', 
@@ -56,21 +74,12 @@ export default function LandingPage() {
         <Title><em>개인 맞춤형 퀴즈</em>.</Title>
       </div>
 
-      <div style={{ 
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        display: 'flex',
-        flexDirection: 'row',
-        animation: 'move-left 10s linear infinite',
-        // backgroundColor: '#ff0000',
-        // height: '30px'
-      }}>
+      <ImageBox>
         {/* <img className='monsters-image' src={monsters} alt='예시 화면' />
         <img className='monsters-image-2' src={monsters} alt='예시 화면' /> */}
-        <img style={{width: '200vw', minWidth: '200vw', position: 'relative', top: '15vw'}} src={problemsImage} />
-      </div>
+
+        <img style={{width: '200vw', minWidth: '200vw'}} src={problemsImage} />
+      </ImageBox>
       
     </FullScreenBox>
   </>
