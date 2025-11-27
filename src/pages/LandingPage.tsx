@@ -8,7 +8,7 @@ import problemsImage2 from '../images/problem2.png';
 import './animation.css';
 
 const Subject = styled.p`
-  font-size: 3.4rem;
+  font-size: 3.6rem;
   em {
     font-weight: bold;
     font-style: normal;
@@ -80,6 +80,26 @@ export default function LandingPage() {
 
         <img style={{width: '200vw', minWidth: '200vw'}} src={problemsImage} />
       </ImageBox>
+      
+    </FullScreenBox>
+
+    <FullScreenBox style={{
+      display: 'flex',
+      flexDirection: 'column', 
+      justifyContent: 'start',
+      padding: 0,
+      alignItems: 'flex-start',
+      backgroundColor: '#F1EDEB',
+      position: 'relative',
+    }}>
+      <div style={{
+        padding: '100px'
+      }}>
+        <Title>티케팅이 처음인 당신을 위한</Title>
+        <Title><em>모의 티케팅</em>.</Title>
+      </div>
+
+      
       
     </FullScreenBox>
   </>
