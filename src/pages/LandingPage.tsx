@@ -6,6 +6,9 @@ import problemsImage from '../images/problems.png';
 import problemsImage1 from '../images/problem1.png';
 import problemsImage2 from '../images/problem2.png';
 import './animation.css';
+import ticketImage from '../images/ticketing.png';
+import matchingImage from '../images/matching1.png';
+import matchingFoundImage from '../images/matchingfound.png';
 
 const Subject = styled.p`
   font-size: 3.6rem;
@@ -99,7 +102,41 @@ export default function LandingPage() {
         <Title><em>모의 티케팅</em>.</Title>
       </div>
 
+      <img style={{height: '65vh', width: '100vw', objectFit: 'contain'}} src={ticketImage} />
       
+    </FullScreenBox>
+
+    <FullScreenBox style={{
+      display: 'flex',
+      flexDirection: 'column', 
+      justifyContent: 'start',
+      padding: 0,
+      alignItems: 'flex-start',
+      backgroundColor: '#F1EDEB',
+      position: 'relative',
+    }}>
+      <div style={{
+        padding: '100px'
+      }}>
+        <Title>혼자라도 두렵지 않다,</Title>
+        <Title><em>경기 직관 매칭 서비스</em>.</Title>
+      </div>
+
+        <img style={{
+          position: 'absolute',
+          right: '40vw',
+          top: '40vh',
+          bottom: '10vh',
+          height: '50vh',
+          maxWidth: 'none',
+        }} src={matchingImage} />
+        <img style={{
+          position: 'absolute', 
+          right: '5vw',
+          top: '10vh',
+          bottom: '10vh',
+          height: '80vh',
+        }} src={matchingFoundImage} />
       
     </FullScreenBox>
   </>
