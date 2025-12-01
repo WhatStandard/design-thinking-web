@@ -9,6 +9,7 @@ import './animation.css';
 import ticketImage from '../images/ticketing.png';
 import matchingImage from '../images/matching1.png';
 import matchingFoundImage from '../images/matchingfound.png';
+import UserThinking from "../components/UserThinking";
 
 const Subject = styled.p`
   font-size: 4.2rem;
@@ -43,6 +44,16 @@ const ImageBox = styled.div`
     animation-play-state: paused;
   }
 `;
+
+const UserThinkingBox = styled.div`
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  > *:not(:first-child) {
+    grid-row: span 2;
+  }
+`
 
 export default function LandingPage() {
   return <>
@@ -141,7 +152,7 @@ export default function LandingPage() {
       
     </FullScreenBox>
 
-    <FullScreenBox style={{
+    <FullScreenBox overflowOK style={{
       display: 'flex',
       flexDirection: 'column', 
       justifyContent: 'start',
@@ -149,6 +160,7 @@ export default function LandingPage() {
       alignItems: 'flex-start',
       backgroundColor: '#F1EDEB',
       position: 'relative',
+      paddingBottom: '1rem'
     }}>
       <div style={{
         padding: '100px'
@@ -157,21 +169,18 @@ export default function LandingPage() {
         <Title>다양한 사용자들의 의견.</Title>
       </div>
 
-        <img style={{
-          position: 'absolute',
-          right: '40vw',
-          top: '40vh',
-          bottom: '10vh',
-          height: '50vh',
-          maxWidth: 'none',
-        }} src={matchingImage} />
-        <img style={{
-          position: 'absolute', 
-          right: '5vw',
-          top: '10vh',
-          bottom: '10vh',
-          height: '80vh',
-        }} src={matchingFoundImage} />
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
+        <UserThinkingBox>
+          
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" slim />
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" />
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" />
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" />
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" />
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" />
+          <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" />
+        </UserThinkingBox>
+      </div>
       
     </FullScreenBox>
   </>
