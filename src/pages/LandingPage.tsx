@@ -182,5 +182,9 @@ export default function LandingPage() {
       </div>
       
     </FullScreenBox>
+    
+    <FullScreenBox overflowOK style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '3rem', backgroundColor: '#F1EDEB',}} >
+      <RedButton>시작하기</RedButton>
+    </FullScreenBox>
   </>
 }
