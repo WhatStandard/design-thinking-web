@@ -11,7 +11,8 @@ import matchingImage from '../images/matching1.png';
 import matchingFoundImage from '../images/matchingfound.png';
 
 const Subject = styled.p`
-  font-size: 3.6rem;
+  font-size: 4.2rem;
+  line-height: 5.0rem;
   em {
     font-weight: bold;
     font-style: normal;
@@ -57,7 +58,7 @@ export default function LandingPage() {
       <Subject><em>설명설명</em>설명설명.</Subject>
       <div style={{ height: '3rem' }} />
       <RedButton>시작하기</RedButton>
-      <div style={{height: '3rem'}} />
+      <div style={{height: '2.5rem'}} />
       
     </FullScreenBox>
 
@@ -120,6 +121,40 @@ export default function LandingPage() {
       }}>
         <Title>혼자라도 두렵지 않다,</Title>
         <Title><em>경기 직관 매칭 서비스</em>.</Title>
+      </div>
+
+        <img style={{
+          position: 'absolute',
+          right: '40vw',
+          top: '40vh',
+          bottom: '10vh',
+          height: '50vh',
+          maxWidth: 'none',
+        }} src={matchingImage} />
+        <img style={{
+          position: 'absolute', 
+          right: '5vw',
+          top: '10vh',
+          bottom: '10vh',
+          height: '80vh',
+        }} src={matchingFoundImage} />
+      
+    </FullScreenBox>
+
+    <FullScreenBox style={{
+      display: 'flex',
+      flexDirection: 'column', 
+      justifyContent: 'start',
+      padding: 0,
+      alignItems: 'flex-start',
+      backgroundColor: '#F1EDEB',
+      position: 'relative',
+    }}>
+      <div style={{
+        padding: '100px'
+      }}>
+        <Title><em>퍼스트이닝</em>을 사랑하는</Title>
+        <Title>다양한 사용자들의 의견.</Title>
       </div>
 
         <img style={{
