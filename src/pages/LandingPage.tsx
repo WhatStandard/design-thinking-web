@@ -65,8 +65,8 @@ export default function LandingPage() {
       alignItems: 'flex-start',
       backgroundColor: '#F1EDEB',
     }}>
-      <Subject>프로젝트 한줄 설명,</Subject>
-      <Subject><em>설명설명</em>설명설명.</Subject>
+      <Subject>쉽고 재미있는 야구 입문,</Subject>
+      <Subject><em>퍼스트이닝</em>과 함께.</Subject>
       <div style={{ height: '3rem' }} />
       <RedButton>시작하기</RedButton>
       <div style={{height: '2.5rem'}} />
