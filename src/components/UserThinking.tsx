@@ -12,7 +12,7 @@ const Container = styled.div<ContainerProps>`
   padding: 1.8rem;
   border-radius: 1.5rem;
 
-  gap: 1rem;
+  gap: 1.2rem;
   font-size: 1.3rem;
 
   background-color: #ffffff;
