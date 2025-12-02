@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface MegaMenuData {
   [key: string]: string[];
@@ -36,15 +37,15 @@ const MegaMenu: React.FC<{ title: string; items: string[]; isOpen: boolean }> = 
           {items.map((item, index) => (
             <div key={index}>
               {/* [수정] KBO 팀 리스트 클릭 시 새 페이지로 이동 */}
-              <a 
-                href={
-                  item === '게시판 홈' ? '/#/community' : 
-                  item === 'KBO 팀 리스트' ? '/#/kbo-teams' : '#'
+              <Link
+                to={
+                  item === '게시판 홈' ? '/community' : 
+                  item === 'KBO 팀 리스트' ? '/kbo-teams' : '/'
                 } 
                 className="block p-3 rounded-lg bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200 text-sm font-medium group-hover:shadow-md"
               >
                 {item}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -80,9 +81,9 @@ const MobileMenu: React.FC = () => (
               <ul className="space-y-1 pl-4">
                 {items.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    <Link to="/" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {item}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -97,6 +98,7 @@ const MobileMenu: React.FC = () => (
 /* 수정: 프로필 팝오버 컴포넌트 추가 */
 const ProfilePopover: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   const popoverRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -172,7 +174,7 @@ const ProfilePopover: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ is
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('nickname');
             onClose();
-            window.location.href = '/login';
+            navigate('/login');
           }}
         >
           <LogOut className="h-4 w-4" />
@@ -187,6 +189,7 @@ const ProfilePopover: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ is
 const Header: React.FC<HeaderProps> = ({ isLoginPage = false }) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [profilePopoverOpen, setProfilePopoverOpen] = useState(false);
+  const navigate = useNavigate();
   
   /* 수정: hover 방식 제거, 클릭 토글 방식으로 변경 */
   const handleMenuClick = (menu: string) => {
@@ -226,13 +229,13 @@ const Header: React.FC<HeaderProps> = ({ isLoginPage = false }) => {
             {/* 수정: 사이트 이름 "BASEBALLGO"에서 "First 1inning"으로 변경 */}
             {/* 수정: 사이트 이름 "First 1nning"으로 변경 및 글자 크기 증가 */}
             {/* [edit] 로그인 페이지에서 로고 클릭 시 새로고침 */}
-            <a 
-              href={isLoginPage ? "/login" : "/"} 
+            <Link
+              to={isLoginPage ? "/login" : "/"} 
               className="text-3xl font-bold text-primary hover:text-red-2 transition-colors"
               onClick={isLoginPage ? (e) => { e.preventDefault(); window.location.reload(); } : undefined}
             >
               First 1nning
-            </a>
+            </Link>
             
             {/* Desktop Navigation */}
             {/* [edit] 네비게이션 메뉴 블록 전체를 더 오른쪽으로 이동 */}
@@ -280,13 +283,13 @@ const Header: React.FC<HeaderProps> = ({ isLoginPage = false }) => {
               ))}
               
               {/* [edit] 퀴즈 메뉴에 로그인 페이지 제한 추가 */}
-              <a
-                href={isLoginPage ? "" : "/quiz"}
+              <Link
+                to={isLoginPage ? "" : "/quiz"}
                 className="flex items-center space-x-1 px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium whitespace-nowrap"
                 onClick={isLoginPage ? (e) => { e.preventDefault(); window.location.reload(); } : undefined}
               >
                 <span>퀴즈</span>
-              </a>
+              </Link>
             </nav>
           </div>
 
@@ -324,7 +327,7 @@ const Header: React.FC<HeaderProps> = ({ isLoginPage = false }) => {
                     if (isLoggedIn) {
                       setProfilePopoverOpen(!profilePopoverOpen);
                     } else {
-                      window.location.href = '/login';
+                      navigate('/login');
                     }
                   }
                 }}

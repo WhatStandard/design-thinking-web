@@ -14,27 +14,28 @@ import {
   Instagram,
   Youtube
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const quickLinks = [
-    { icon: BookOpen, label: '초보 가이드', href: '#' },
-    { icon: Ticket, label: '티케팅 매뉴얼', href: '#' },
-    { icon: Play, label: '모의 티케팅', href: '#' },
-    { icon: HelpCircle, label: '퀴즈 시작', href: '#' }
+    { icon: BookOpen, label: '초보 가이드', href: '/' },
+    { icon: Ticket, label: '티케팅 매뉴얼', href: '/' },
+    { icon: Play, label: '모의 티케팅', href: '/' },
+    { icon: HelpCircle, label: '퀴즈 시작', href: '/' }
   ];
 
   const serviceLinks = [
-    { label: '서비스 소개', href: '#' },
-    { label: '이용약관', href: '#' },
-    { label: '개인정보처리방침', href: '#' },
-    { label: '문의하기', href: '#' }
+    { label: '서비스 소개', href: '/' },
+    { label: '이용약관', href: '/' },
+    { label: '개인정보처리방침', href: '/' },
+    { label: '문의하기', href: '/' }
   ];
 
   const socialLinks = [
-    { icon: Facebook, label: 'Facebook', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Instagram, label: 'Instagram', href: '#' },
-    { icon: Youtube, label: 'YouTube', href: '#' }
+    { icon: Facebook, label: 'Facebook', href: '/' },
+    { icon: Twitter, label: 'Twitter', href: '/' },
+    { icon: Instagram, label: 'Instagram', href: '/' },
+    { icon: Youtube, label: 'YouTube', href: '/' }
   ];
 
   return (
@@ -81,10 +82,10 @@ const Footer: React.FC = () => {
                   className="w-full justify-start p-0 h-auto text-muted-foreground hover:text-primary"
                   asChild
                 >
-                  <a href={link.href} className="flex items-center">
+                  <Link to={link.href} className="flex items-center">
                     <link.icon className="mr-2 h-4 w-4" />
                     {link.label}
-                  </a>
+                  </Link>
                 </Button>
               ))}
             </div>
@@ -101,7 +102,7 @@ const Footer: React.FC = () => {
                   className="w-full justify-start p-0 h-auto text-muted-foreground hover:text-primary"
                   asChild
                 >
-                  <a href={link.href}>{link.label}</a>
+                  <Link to={link.href}>{link.label}</Link>
                 </Button>
               ))}
             </div>
@@ -119,9 +120,9 @@ const Footer: React.FC = () => {
                   className="h-10 w-10 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary"
                   asChild
                 >
-                  <a href={social.href} aria-label={social.label}>
+                  <Link to={social.href} aria-label={social.label}>
                     <social.icon className="h-4 w-4" />
-                  </a>
+                  </Link>
                 </Button>
               ))}
             </div>

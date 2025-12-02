@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Header from './Header';
 import Footer from './Footer';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // [edit] 로그인 페이지 - login.png 참고한 심플한 로그인 카드
 const LoginPage: React.FC = () => {
@@ -101,17 +101,17 @@ const LoginPage: React.FC = () => {
               {/* [edit] 하단 링크들 - login.png와 동일한 구성 */}
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <Link to="/" className="hover:text-primary transition-colors">
                     아이디 찾기
-                  </a>
+                  </Link>
                   <span>·</span>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <Link to="/" className="hover:text-primary transition-colors">
                     비밀번호 찾기
-                  </a>
+                  </Link>
                   <span>·</span>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <Link to="/" className="hover:text-primary transition-colors">
                     회원가입
-                  </a>
+                  </Link>
                 </div>
               </div>
             </CardContent>

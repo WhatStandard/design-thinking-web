@@ -15,6 +15,7 @@ import {
   Users,
   Zap
 } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyTeamCard: React.FC = () => {
   /* 수정: 2025년 KBO 데이터와 동기화, 공식 스타일 팀 로고로 업데이트 */
@@ -103,9 +104,9 @@ const MyTeamCard: React.FC = () => {
 
         <div className="pt-2 border-t border-border">
           <p className="text-xs text-muted-foreground mb-2">팀 뉴스</p>
-          <a href="#" className="text-sm text-foreground hover:text-primary transition-colors line-clamp-2">
+          <Link to="#" className="text-sm text-foreground hover:text-primary transition-colors line-clamp-2">
             LG 트윈스, 시즌 마지막 홈경기에서 팬들과 특별한 만남
-          </a>
+          </Link>
         </div>
       </CardContent>
     </Card>
@@ -118,6 +119,8 @@ const QuizProgressCard: React.FC = () => {
   const currentScore = 2111;
   const currentLevel = '초급';
   const progressPercent = 75;
+
+  const navigate = useNavigate();
 
   return (
     <Card className="bg-card border-border card-hover">
@@ -162,7 +165,7 @@ const QuizProgressCard: React.FC = () => {
         {/* [수정] 오늘의 퀴즈 시작 버튼을 퀴즈 페이지로 연결 */}
         <Button 
           className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-          onClick={() => window.location.href = '/#/quiz'}
+          onClick={() => navigate('/quiz')}
         >
           <Play className="mr-2 h-4 w-4" />
           오늘의 퀴즈 시작

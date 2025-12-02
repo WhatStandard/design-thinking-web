@@ -23,6 +23,7 @@ import {
   X,
   GripVertical
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const QuickTiles: React.FC = () => {
   /* 수정: 빠른 시작 카드 편집 모드 추가 */
@@ -463,9 +464,9 @@ const RankingsAndClips: React.FC = () => {
               <div className="space-y-4">
                 {/* 수정: 실제 유튜브 영상 링크와 썸네일 이미지 적용 */}
                 {clips.map((clip, index) => (
-                  <a 
+                  <Link
                     key={index}
-                    href={clip.url}
+                    to={clip.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-3 bg-surface/50 rounded-lg hover:bg-surface transition-colors cursor-pointer group block"
@@ -494,7 +495,7 @@ const RankingsAndClips: React.FC = () => {
                     <Button size="sm" variant="ghost" className="opacity-0 group-hover:opacity-100 transition-opacity">
                       <Play className="h-4 w-4" />
                     </Button>
-                  </a>
+                  </Link>
                 ))}
               </div>
               <Button variant="ghost" className="w-full mt-4 text-primary hover:bg-primary/10">

@@ -3,8 +3,11 @@ import { Calendar, Play, Trophy, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
+  const navigate = useNavigate();
+
   const todayGames = [
     {
       teams: '두산 vs SSG',
@@ -59,7 +62,7 @@ const HeroSection: React.FC = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all"
-                onClick={() => window.location.href = '/quiz'}
+                onClick={() => navigate('/quiz') }
               >
                 <Play className="mr-2 h-5 w-5" />
                 퀴즈 이어서 풀기
