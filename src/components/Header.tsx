@@ -174,7 +174,7 @@ const ProfilePopover: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ is
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('nickname');
             onClose();
-            navigate('/login');
+            navigate('/landing');
           }}
         >
           <LogOut className="h-4 w-4" />
@@ -230,7 +230,7 @@ const Header: React.FC<HeaderProps> = ({ isLoginPage = false }) => {
             {/* 수정: 사이트 이름 "First 1nning"으로 변경 및 글자 크기 증가 */}
             {/* [edit] 로그인 페이지에서 로고 클릭 시 새로고침 */}
             <Link
-              to={isLoginPage ? "/login" : "/"} 
+              to={isLoginPage ? "/landing" : "/"} 
               className="text-3xl font-bold text-primary hover:text-red-2 transition-colors"
               onClick={isLoginPage ? (e) => { e.preventDefault(); window.location.reload(); } : undefined}
             >
@@ -327,7 +327,7 @@ const Header: React.FC<HeaderProps> = ({ isLoginPage = false }) => {
                     if (isLoggedIn) {
                       setProfilePopoverOpen(!profilePopoverOpen);
                     } else {
-                      navigate('/login');
+                      navigate('/landing');
                     }
                   }
                 }}
