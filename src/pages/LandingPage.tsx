@@ -15,6 +15,8 @@ import profile2 from '../images/profile2.jpg';
 import profile3 from '../images/profile3.jpg';
 import profile4 from '../images/profile4.png';
 
+import { useNavigate } from "react-router-dom";
+
 const Subject = styled.p`
   font-size: 4.2rem;
   line-height: 5.0rem;
@@ -60,6 +62,12 @@ const UserThinkingBox = styled.div`
 `
 
 export default function LandingPage() {
+  const navigate = useNavigate();
+
+  const startButton = () => {
+    navigate('/login');
+  }
+
   return <>
     <FullScreenBox style={{
       display: 'flex',
@@ -72,7 +80,7 @@ export default function LandingPage() {
       <Subject>쉽고 재미있는 야구 입문,</Subject>
       <Subject><em>퍼스트이닝</em>과 함께.</Subject>
       <div style={{ height: '3rem' }} />
-      <RedButton>시작하기</RedButton>
+      <RedButton onClick={ startButton }>시작하기</RedButton>
       <div style={{height: '2.5rem'}} />
       
     </FullScreenBox>
@@ -188,7 +196,7 @@ export default function LandingPage() {
     </FullScreenBox>
     
     <FullScreenBox overflowOK style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '3rem', backgroundColor: '#F1EDEB',}} >
-      <RedButton>시작하기</RedButton>
+      <RedButton onClick={ startButton }>시작하기</RedButton>
     </FullScreenBox>
   </>
 }
