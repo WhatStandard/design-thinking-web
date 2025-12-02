@@ -10,6 +10,10 @@ import ticketImage from '../images/ticketing.png';
 import matchingImage from '../images/matching1.png';
 import matchingFoundImage from '../images/matchingfound.png';
 import UserThinking from "../components/UserThinking";
+import profile1 from '../images/profile1.png';
+import profile2 from '../images/profile2.jpg';
+import profile3 from '../images/profile3.jpg';
+import profile4 from '../images/profile4.png';
 
 const Subject = styled.p`
   font-size: 4.2rem;
@@ -173,11 +177,11 @@ export default function LandingPage() {
         <UserThinkingBox>
           
           <UserThinking name="이동현" content="퀴즈가 도움이 많이 되었어요!! 최고에요!!!" slim />
-          <UserThinking name="박다운" content="매칭 서비스 덕분에 여자 친구도 사귀고 행복합니다. 퍼스트 이닝 최고!" />
-          <UserThinking name="선주찬" content="모의 티케팅으로 맹 훈련해서 드뎌 앞자리 잡았어요 ㅠㅠㅠㅠ 나만 알면 좋겠음!" />
-          <UserThinking name="박현아" content="친구 따라 야구 보고 싶어서 줄 글로 설명된 걸로 보다가 포기했었는데, 이 퀴즈를 통해서 이젠 야구에 대해서 모르는 게 없어요!" />
-          <UserThinking name="황기준" content="모의 티켓팅으로 미리 연습해 보고 나니까, 감이 잡혀서 실제 예매할 때 진짜 덜 떨렸습니다. 다음에는 친구들 예매도 대신 해줄 수 있을 것 같아요." />
-          <UserThinking name="" content="" />
+          <UserThinking name="박다운" profileImage={profile2} content="매칭 서비스 덕분에 여자 친구도 사귀고 행복합니다. 퍼스트 이닝 최고!" />
+          <UserThinking name="선주찬" profileImage={profile1} content="모의 티케팅으로 맹 훈련해서 드뎌 앞자리 잡았어요 ㅠㅠㅠㅠ 나만 알면 좋겠음!" />
+          <UserThinking name="박현아" profileImage={profile1} content="친구 따라 야구 보고 싶어서 줄 글로 설명된 걸로 보다가 포기했었는데, 이 퀴즈를 통해서 이젠 야구에 대해서 모르는 게 없어요!" />
+          <UserThinking name="황기준" profileImage={profile3} content="모의 티켓팅으로 미리 연습해 보고 나니까, 감이 잡혀서 실제 예매할 때 진짜 덜 떨렸습니다. 다음에는 친구들 예매도 대신 해줄 수 있을 것 같아요." />
+          <UserThinking name="염에스테반" profileImage={profile4} content="매칭에서 여자친구를 처음 만난 지 벌써 2년이 지났네요. 지금은 전 여친이 되었지만.. 재빈아, 보고싶다..." />
         </UserThinkingBox>
       </div>
       

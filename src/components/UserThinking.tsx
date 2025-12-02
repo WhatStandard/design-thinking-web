@@ -33,6 +33,7 @@ const Image = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 1.25rem;
+  object-fit: cover;
 `;
 
 type Props = {
