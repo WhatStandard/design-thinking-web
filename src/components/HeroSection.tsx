@@ -30,23 +30,19 @@ const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-background to-secondary/30 py-16 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-primary rounded-full"></div>
-        <div className="absolute top-32 right-20 w-24 h-24 border-2 border-accent rounded-full"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-destructive rounded-full"></div>
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="relative bg-gradient-to-br from-background to-secondary/30 py-16">
+      {/* 수정: 장식용 동그라미 3개 삭제 - 레이아웃 여백 자연스럽게 보정 */}
+      
+      <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           {/* Main Hero Content */}
           <div className="lg:col-span-2 space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                안녕하세요, <span className="text-primary">김야구</span>님!
+                안녕하세요, <span className="text-primary">조명아</span>님!
                 <br />
-                오늘도 야구 한 입, <span className="text-accent">핵심만 쏙</span>.
+                {/* 수정: '핵심만 쏙.' → '핵심만 쏙!' 변경 및 느낌표 색상 맞춤 */}
+                오늘도 야구 한 입, <span className="text-accent">핵심만 쏙<span className="text-accent">!</span></span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
                 내 팀 일정과 퀴즈 진행 상황을 확인하고, 추천 클립으로 빠르게 따라잡으세요.
@@ -58,10 +54,12 @@ const HeroSection: React.FC = () => {
                 <Calendar className="mr-2 h-5 w-5" />
                 오늘 경기 보기
               </Button>
+              {/* [수정] 퀴즈 이어서 풀기 버튼을 퀴즈 페이지로 연결 */}
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all"
+                onClick={() => window.location.href = '/quiz'}
               >
                 <Play className="mr-2 h-5 w-5" />
                 퀴즈 이어서 풀기
@@ -75,11 +73,13 @@ const HeroSection: React.FC = () => {
                 <div className="text-sm text-muted-foreground">연속 학습</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent">1,240</div>
+                {/* 수정: 누적 점수 1,240 → 2,111로 변경 */}
+                <div className="text-2xl font-bold text-accent">2,111</div>
                 <div className="text-sm text-muted-foreground">누적 점수</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">초급</div>
+                {/* [edit] 현재 레벨 '삐약삐약' → '삐약삐약'으로 수정 - 완전히 수정 */}
+                <div className="text-2xl font-bold text-foreground" title="현재 레벨: 삐약삐약" aria-label="현재 레벨 삐약삐약">삐약삐약</div>
                 <div className="text-sm text-muted-foreground">현재 레벨</div>
               </div>
             </div>

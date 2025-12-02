@@ -17,6 +17,19 @@ import {
 } from 'lucide-react';
 
 const MyTeamCard: React.FC = () => {
+  /* 수정: 2025년 KBO 데이터와 동기화, 공식 스타일 팀 로고로 업데이트 */
+  const myTeamData = {
+    name: 'LG 트윈스',
+    shortName: 'LG',
+    rank: 1,
+    wins: 85,
+    losses: 56,
+    draws: 3,
+    winRate: 0.603,
+    /* 수정: 업로드해주신 실제 LG 트윈스 공식 로고 사용 */
+    logo: '/images/LG.jpeg'
+  };
+  
   const recentGames = [
     { result: 'W', score: '7-3' },
     { result: 'L', score: '2-5' },
@@ -35,12 +48,18 @@ const MyTeamCard: React.FC = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-            LG
-          </div>
+          {/* 수정: 원형 이니셜 배지 제거, 팀 로고로 교체 */}
+          <img 
+            src={myTeamData.logo} 
+            alt={`${myTeamData.name} 로고`}
+            className="w-12 h-12 object-contain"
+          />
           <div>
-            <h3 className="font-semibold text-foreground">LG 트윈스</h3>
-            <p className="text-sm text-muted-foreground">2위 · 승률 .585</p>
+            <h3 className="font-semibold text-foreground">{myTeamData.name}</h3>
+            {/* 수정: 하이픈 없이 A승 B패 C무 0.XXX 형식으로 표시 */}
+            <p className="text-sm text-muted-foreground">
+              {myTeamData.rank}위 · {myTeamData.wins}승 {myTeamData.losses}패 {myTeamData.draws}무 {myTeamData.winRate.toFixed(3)}
+            </p>
           </div>
         </div>
 
@@ -95,7 +114,8 @@ const MyTeamCard: React.FC = () => {
 
 const QuizProgressCard: React.FC = () => {
   const streakDays = 6;
-  const currentScore = 1240;
+  /* 수정: 누적 점수 1,240 → 2,111로 변경 */
+  const currentScore = 2111;
   const currentLevel = '초급';
   const progressPercent = 75;
 
@@ -139,7 +159,11 @@ const QuizProgressCard: React.FC = () => {
           </span>
         </div>
 
-        <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+        {/* [수정] 오늘의 퀴즈 시작 버튼을 퀴즈 페이지로 연결 */}
+        <Button 
+          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+          onClick={() => window.location.href = '/#/quiz'}
+        >
           <Play className="mr-2 h-4 w-4" />
           오늘의 퀴즈 시작
         </Button>
@@ -285,6 +309,17 @@ const PersonalDashboard: React.FC = () => {
   return (
     <section className="py-12 bg-secondary/20">
       <div className="container mx-auto px-6">
+        {/* 수정: 학습 안내 문구 추가 */}
+        <div className="mb-6">
+          <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 text-center">
+            <div className="flex items-center justify-center space-x-2 text-accent">
+              <BookOpen className="h-5 w-5" />
+              <span className="font-medium">오늘은 아직 학습하지 않았습니다</span>
+            </div>
+            <p className="text-sm text-muted-foreground mt-1">오늘의 퀴즈를 시작해보세요!</p>
+          </div>
+        </div>
+        
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-foreground mb-2">개인 대시보드</h2>
           <p className="text-muted-foreground">나만의 야구 여정을 한눈에 확인하세요</p>

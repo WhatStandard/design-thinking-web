@@ -44,7 +44,8 @@ const Footer: React.FC = () => {
           {/* Brand & Description */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-2">BASEBALLGO</h3>
+              {/* 수정: 사이트 이름 "First 1nning"으로 변경 */}
+              <h3 className="text-2xl font-bold text-primary mb-2">First 1nning</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 야구 입문자를 위한 완벽한 가이드.<br />
                 규칙부터 티케팅까지, 야구의 모든 것을 쉽고 재미있게 배워보세요.
@@ -54,7 +55,8 @@ const Footer: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-center text-sm text-muted-foreground">
                 <Mail className="mr-2 h-4 w-4" />
-                contact@baseballgo.kr
+                {/* 수정: 이메일 주소 변경 */}
+                contact@first1nning.kr
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <Phone className="mr-2 h-4 w-4" />
@@ -62,7 +64,8 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <MapPin className="mr-2 h-4 w-4" />
-                서울시 강남구 테헤란로 123
+                {/* 수정: 주소 변경 */}
+                경기 용인시 기흥구 덕영대로 1732
               </div>
             </div>
           </div>
@@ -147,7 +150,8 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2024 BASEBALLGO. All rights reserved.
+            {/* 수정: 저작권 표시도 "First 1nning"으로 변경 */}
+            © 2024 First 1nning. All rights reserved.
           </div>
           
           <div className="flex items-center space-x-6 text-sm text-muted-foreground">
@@ -163,7 +167,8 @@ const Footer: React.FC = () => {
         <div className="mt-6 pt-6 border-t border-border">
           <div className="text-xs text-muted-foreground space-y-1">
             <p>
-              BASEBALLGO는 야구 입문자를 위한 교육 및 정보 제공 서비스입니다. 
+              {/* [edit] 서비스명 BASEBALLGO를 First 1nning으로 일괄 치환 */}
+              First 1nning은 야구 입문자를 위한 교육 및 정보 제공 서비스입니다.
               KBO 리그와의 공식적인 제휴 관계는 없으며, 모든 팀 로고 및 선수 정보는 교육 목적으로만 사용됩니다.
             </p>
             <p>
